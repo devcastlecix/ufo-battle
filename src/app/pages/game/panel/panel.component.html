@@ -1,0 +1,20 @@
+<div id="score-board" class="fixed-score-board">
+    <div class="d-flex align-items-center d-flex align-items-center flex-column mb-3">
+        <strong>Time left:</strong> 
+        <span id="time-left">{{ timeLeft }}</span>
+        
+        <strong>Punctuation:</strong>
+        <h3><span class="badge text-bg-primary" id="punctuation">{{ score }}</span></h3>
+        <button type="button" class="btn btn-outline-dark mb-2"
+            (click)="startNewGame()"
+            *ngIf="!gameIsRunning">
+            Start again
+        </button>
+        <button type="button" class="btn btn-dark mb-2"
+            *ngIf="!gameIsRunning && (isLoggedIn$ | async)"
+            (click)="onSaveRecords()"
+            [disabled]="isButtonDisabled">
+            Save record
+        </button>        
+    </div>                
+</div>

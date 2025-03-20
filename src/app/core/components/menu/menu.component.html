@@ -1,0 +1,42 @@
+<header class="navbar navbar-expand-lg container-fluid pt-0 pb-0">
+    <nav class="container-fluid"  id="menu">
+        <a class="navbar-brand" href="http://www.upm.es" target="_nueva">
+            <img src='assets/imgs/upmlogo.jpg' id='upmlogo' class='bordes_redondos'>
+            U.P.M / Ufo Battle
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a routerLink="/home" routerLinkActive="active" class="nav-link my-2 py-2">Home <i class="fa fa-home"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a routerLink="/preferences" routerLinkActive="active" class="nav-link my-2 py-2">Preferences <i class="fa fa-cogs"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a routerLink="/game" routerLinkActive="active"class="nav-link my-2 py-2">Play <i class="fa fa-play"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a routerLink="/records" routerLinkActive="active"  class="nav-link my-2 py-2">Records <i class="fa fa-trophy"></i></a>
+                </li>
+                <li class="nav-item" *ngIf="isLoggedIn$ | async">
+                  <a routerLink="/profile" routerLinkActive="active" class="nav-link my-2 py-2">Profile <i class="fa fa-user"></i></a>
+                </li>                
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">                
+                <li class="nav-item" *ngIf="!(isLoggedIn$ | async)">
+                  <a routerLink="/registration" routerLinkActive="active" class="nav-link my-2 py-2">Register <i class="fa fa-user"></i></a>
+                </li>
+                <li class="nav-item" *ngIf="!(isLoggedIn$ | async)">
+                  <a routerLink="/login" routerLinkActive="active" class="nav-link my-2 py-2">Login <i class="fa fa-sign-in"></i></a>
+                </li>
+                <li class="nav-item"  *ngIf="isLoggedIn$ | async">
+                  <a (click)="logout()" style="cursor: pointer" class="nav-link my-2 py-2">Logout <i class="fa fa-sign-out"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+  </header>

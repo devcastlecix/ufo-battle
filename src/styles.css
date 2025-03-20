@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+.bordes_redondos {
+    border-radius: 10px;
+}
+
+.cuerpo-normal {
+    background-color: rgba(255, 165, 0, 0.5);
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.titulo-formulario {    
+    position: relative; transform: translateY(-50%);
+}
+
+.titulo-formulario h2, .titulo-formulario img {
+    background-color: rgb(255, 210, 127);
+}  
+
+.cuerpo-borde {    
+    border: 2px solid blue;    
+}
+
+.formulario-borde {    
+    border-top: 4px solid #ffc107;
+    border-left: 4px solid #ffc107;
+    border-right: 4px solid blue;
+    border-bottom: 4px solid blue;    
+}
+
+#etsisi-logo {
+    width: 200px; height: 120px;
+}

@@ -1,0 +1,72 @@
+<section class="container pt-3">
+    <div id="register-user" class="mt-5 cuerpo-normal p-5 rounded ">
+        <div class="pb-5 pr-5 pl-5 rounded mt-4 formulario-borde">
+            <div class="d-flex align-items-center justify-content-center titulo-formulario">                
+                    <img src="assets/imgs/miw.png" alt="MIW Logo" class="cuerpo-normal" id="miw-logo">
+                    <h2 class="text-primary fw-bold cuerpo-normal fst-italic mb-0">Registro de Usuario</h2>                           
+            </div>
+            <form class="d-flex flex-column align-items-center" autocomplete="off"
+                [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="row mb-3 w-50">
+                    <label for="user" class="col-sm-6 col-form-label text-end fw-bold">Username:</label>
+                    <div class="col-sm-6">
+                        <input type="text"
+                         class="form-control" 
+                         formControlName="username"
+                         placeholder="username"
+                         maxlength="8"
+                         [class.is-invalid]="usernameNotValidMin || usernameNotExists"
+                          >
+                          <app-loading *ngIf="loadingReview"></app-loading>                                             
+                          <small *ngIf="usernameNotValidMin" class="text-danger">
+                            Ingrese entre 5 a 8 caracteres
+                          </small>
+                          <small *ngIf="usernameNotExists" class="text-danger">
+                            Ese nombre de usuario ya existe
+                          </small>
+                          <small *ngIf="usernameNotAsyncProcessed" class="text-danger">
+                            Hubo problemas con la revision del username
+                          </small>                                            
+                    </div>                    
+                </div>
+                <div class="row mb-3 w-50">
+                    <label for="email" class="col-sm-6 col-form-label text-end fw-bold">Email:</label>
+                    <div class="col-sm-6">
+                        <input type="text" 
+                        class="form-control"                     
+                        formControlName="email"
+                        [class.is-invalid]="emailNotValid"
+                        placeholder="Email"
+                        >
+                        <small *ngIf="emailNotValid" class="text-danger">
+                            Ingrese el correo 
+                        </small>
+                    </div>                    
+                </div>
+                <div class="row mb-3 w-50">
+                    <label for="password" class="col-sm-6 col-form-label text-end fw-bold">Password:</label>
+                    <div class="col-sm-6">
+                        <input type="password" 
+                        class="form-control" 
+                        formControlName="password"
+                        placeholder="Password"
+                        [class.is-invalid]="passwordNotValid">
+                    </div>                    
+                </div>   
+                <div class="row mb-3 w-50">
+                    <label for="repeatedpwd" class="col-sm-6 col-form-label text-end fw-bold">Confirm password :</label>
+                    <div class="col-sm-6">
+                        <input type="password" 
+                        class="form-control" 
+                        formControlName="repeatedpwd"
+                        placeholder="Confirm password"
+                        [class.is-invalid]="repeatedpwdNotValid">
+                    </div>                    
+                </div>                                
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>  
+</section>

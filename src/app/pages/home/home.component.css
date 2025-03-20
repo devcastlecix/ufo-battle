@@ -1,0 +1,33 @@
+#miw_logo {
+    align: right;
+    width: 300px;
+}
+
+#asig {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 24pt;
+}
+
+#content-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+#practice {
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
+
+#ufo_logo {
+    width: 160px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-80%);
+}
+
+#cuerpo {    
+    border: 1px solid blue;    
+}

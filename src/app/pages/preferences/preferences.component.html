@@ -1,0 +1,32 @@
+<section class="container pt-3">
+    <div id="preferences" class="mt-5 cuerpo-normal p-5 rounded ">
+        <div class="pb-5 pr-5 pl-5 rounded mt-4 formulario-borde">
+            <div class="d-flex align-items-center justify-content-center titulo-formulario">                
+                    <img src="assets/imgs/ETSISI_color.png" alt="ETSISI Logo" class="cuerpo-normal" id="etsisi-logo">
+                    <h2 class="text-center text-primary fw-bold cuerpo-normal fst-italic">Preferences</h2>                           
+            </div>
+            <form #preferencesForm="ngForm" class="d-flex flex-column align-items-center" (ngSubmit)="onSubmit($event)" >
+                <div class="row mb-3 w-50">
+                    <label for="numberUFOs" class="col-sm-6 col-form-label text-end fw-bold">Number of UFOs:</label>
+                    <div class="col-sm-6">
+                        <input [(ngModel)]="userPreferences.ufosNumber" placeholder="Enter number of UFOs"
+                            type="number" class="form-control" id="numberUFOs" name="numberUFOs"
+                            value="1" min="1" max="5" step="1" required>
+                    </div>
+                </div>
+                <div class="row mb-3 w-50">
+                    <label for="timeSeconds" class="col-sm-6 col-form-label text-end fw-bold">Time (seconds):</label>
+                    <div class="col-sm-6">
+                        <input type="number" class="form-control" id="timeSeconds" name="timeSeconds"
+                        placeholder="Enter time" min="60" max="180" step="60" value="60"
+                        [(ngModel)]="userPreferences.timeSeconds" required>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary">Accept</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</section>

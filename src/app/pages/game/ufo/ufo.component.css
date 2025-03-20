@@ -1,0 +1,8 @@
+.setOfUfos {
+    position: absolute;
+    left: 0px;
+    bottom: 650px;
+    width: 60px;
+    transition: 0.1s linear;
+  }
+  

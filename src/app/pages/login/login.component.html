@@ -1,0 +1,32 @@
+<section class="container pt-3">
+    <div id="login" class="mt-5 cuerpo-normal p-5 rounded ">
+        <div class="pb-5 pr-5 pl-5 rounded mt-4 formulario-borde">
+            <div class="d-flex align-items-center justify-content-center titulo-formulario">                
+                    <img src="assets/imgs/ETSISI_color.png" alt="ETSISI Logo" class="cuerpo-normal" id="etsisi-logo">
+                    <h2 class="text-center text-primary fw-bold cuerpo-normal fst-italic">User identification</h2>                           
+            </div>
+            <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+                <div class="d-flex flex-column align-items-center">                                        
+                    <div class="row mb-3 w-50">
+                        <label for="txtUser" class="col-sm-6 col-form-label text-end fw-bold">User:</label>
+                        <div class="col-sm-6">
+                            <input  [(ngModel)]="user.username"
+                             type="text" class="form-control" id="txtUser" value="" name="txtUser" placeholder="User identifier">
+                        </div>
+                    </div>
+                    <div class="row mb-3 w-50">
+                        <label for="txtPassword" class="col-sm-6 col-form-label text-end fw-bold">Password:</label>
+                        <div class="col-sm-6">
+                            <input [(ngModel)]="user.password"
+                             type="password" class="form-control" id="txtPassword" name="txtPassword" value="" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="text-center mt-3" id="divBtn" *ngIf="!loading">
+                        <button type="submit" class="btn btn-primary" id="btnLogin">Send</button>
+                    </div>
+                    <app-loading *ngIf="loading"></app-loading>      
+                </div>
+            </form>
+        </div>
+    </div>  
+</section>
